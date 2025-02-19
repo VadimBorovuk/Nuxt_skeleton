@@ -42,7 +42,7 @@ export const useUserStore = defineStore('user', () => {
   return {
     userData,
     errorUserData,
-    loading,
     fetchUserData,
+    loading,
   }
 })
