@@ -4,8 +4,9 @@
       <li><NuxtLink to="/" active-class="text-blue-500 font-bold">
         Home
       </NuxtLink></li>
-      <li><NuxtLink active-class="text-blue-500 font-bold" to="/counter">counter</NuxtLink></li>
-      <li><NuxtLink active-class="text-blue-500 font-bold" to="/products">products</NuxtLink></li>
+      <li><NuxtLink active-class="text-blue-500 font-bold" to="/manager">manager</NuxtLink></li>
+      <li><NuxtLink active-class="text-blue-500 font-bold" to="/workplace">workplace</NuxtLink></li>
+      <li><NuxtLink active-class="text-blue-500 font-bold" to="/calendar">calendar</NuxtLink></li>
 
     </ul>
     <button @click="router.push('/')">home</button>

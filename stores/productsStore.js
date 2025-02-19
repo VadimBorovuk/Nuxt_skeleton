@@ -1,4 +1,3 @@
-import {defineStore} from 'pinia';
 import {ref} from 'vue';
 import axios from "axios";
 
@@ -12,7 +11,8 @@ export const productsStore = defineStore('productsStore', () => {
     error.value = null;
 
     try {
-      const response = await axios.get('https://dummyjson.com/products');
+      const config = useRuntimeConfig();
+      const response = await axios(`https://dummyjson.com/products`);
       data.value = response.data;
     } catch (err) {
       error.value = 'Помилка завантаження даних';
