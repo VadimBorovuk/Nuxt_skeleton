@@ -12,6 +12,7 @@ export default defineNuxtRouteMiddleware(async (to) => {
       alert('No token or token expired!')
       window.location.href =  config.public.CLIENT_APP_PATH
     }
+    return;
   }
 
   try {

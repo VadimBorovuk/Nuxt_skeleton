@@ -1,10 +1,18 @@
 <template>
-  <Navbar/>
-  <main class="h-[50vh]">
-    <div class="">
+  <HeadPanel/>
+  <main class="h-[100vh]">
+    <div class="page-holder p-6">
+      <Sidebar/>
       <NuxtPage/>
     </div>
   </main>
 </template>
-<script setup lang="ts">
+<script setup>
+
 </script>
+
+<style scoped lang="scss">
+.page-holder{
+display: flex;
+}
+</style>

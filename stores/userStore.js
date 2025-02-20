@@ -14,9 +14,9 @@ export const useUserStore = defineStore('user', () => {
   const loading = ref(false)
 
   const fetchUserData = async () => {
-    loading.value = true
+
     try {
-      if (import.meta.server) return // Запобігаємо запитам під час SSR
+      // if (import.meta.server) return // Запобігаємо запитам під час SSR
 
       const account = await getUserInfo()
       if (!account?.data?.data) throw new Error('Invalid API response format')
