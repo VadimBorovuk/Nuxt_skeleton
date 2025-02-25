@@ -6,6 +6,7 @@ export function useApiUser() {
   const accountInfo = () => {
     return useNuxtApp().$service({
       url: `/api/manager/${localStorage.getItem('crm_id')}`,
+      method: "get",
     });
   };
 

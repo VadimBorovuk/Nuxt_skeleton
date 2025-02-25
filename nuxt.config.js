@@ -6,9 +6,9 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
     '@nuxtjs/tailwindcss'
   ],
-  routeRules: {
-    'manager': {ssr: true}
-  },
+  // routeRules: {
+  //   'manager': {ssr: true}
+  // },
   runtimeConfig: {
     //for server-only variable
     APP_URL: process.env.SERVER_APP_URL,
@@ -20,7 +20,6 @@ export default defineNuxtConfig({
       CLIENT_APP_ID: process.env.CLIENT_APP_ID,
     },
   },
-  // ssr: false,
   plugins: [
     '~/plugins/services/service',
     '~/plugins/services/serviceCalendar',
@@ -31,9 +30,20 @@ export default defineNuxtConfig({
     shim: false
   },
   i18n: {
-    locales: ['en', 'uk'],
+    lazy: true,
     defaultLocale: 'en',
-    strategy: 'no_prefix',
-    vueI18n: './i18n.config.js',
+    locales: [
+      {code: 'en', name: 'en'},
+      {code: 'uk', name: 'uk'},
+      {code: 'pt', name: 'pt'},
+      {code: 'es', name: 'es'},
+      {code: 'ru', name: 'ru'},
+    ],
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'cc_locale',
+      alwaysRedirect: true
+    },
+    strategy: 'no_prefix', // Прибирає код мови з URL
   }
 })
