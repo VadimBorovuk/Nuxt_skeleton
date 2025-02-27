@@ -10,7 +10,13 @@ export const useLangStore = defineStore('lang', () => {
     maxAge: 31536000
   });
 
-  const locales = ref({ en: 'en', uk: 'uk', pt: 'pt', es: 'es', ru: 'ru' });
+  const locales = ref([
+    {code: 'en', name: 'en'},
+    {code: 'uk', name: 'uk'},
+    {code: 'pt', name: 'pt'},
+    {code: 'es', name: 'es'},
+    {code: 'ru', name: 'ru'}
+  ]);
 
   async function loadMessages(locale, i18n) {
     if (process.client) {

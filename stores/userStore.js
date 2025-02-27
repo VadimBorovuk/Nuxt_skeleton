@@ -11,7 +11,6 @@ export const useUserStore = defineStore('user', () => {
     user_info: {}
   })
   const errorUserData = ref(null)
-  const loading = ref(false)
 
   const fetchUserData = async () => {
 
@@ -35,14 +34,12 @@ export const useUserStore = defineStore('user', () => {
       }
       throw error
     } finally {
-      loading.value = false
     }
   }
 
   return {
     userData,
     errorUserData,
-    fetchUserData,
-    loading,
+    fetchUserData
   }
 })
